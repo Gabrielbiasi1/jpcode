@@ -4,8 +4,6 @@ const progress = document.getElementById("progress");
 const formSteps = document.querySelectorAll(".form-step");
 const progressSteps = document.querySelectorAll(".progress-step");
 const prevFicha = document.querySelectorAll(".btn-prev-ficha");
-const btnPrevFicha = document.getElementById("btnPrevFicha");
-const btnNextFicha = document.getElementById("btnNextFicha");
 const nextFicha = document.querySelectorAll(".btn-next-ficha");
 const extraFichas = document.querySelectorAll(".extra-ficha");
 const qnt = document.getElementById("qntInput");
@@ -40,8 +38,9 @@ function updateFicha(){
 }
 
 function validateFicha(){
-    if(fichaNum<(qnt.value-2))
-        fichaNum=(qnt.value-2);
+    
+    if(fichaNum<(0))
+        fichaNum=0;
     else if(fichaNum>(qnt.value-2))
         fichaNum=(qnt.value-2);
 }
