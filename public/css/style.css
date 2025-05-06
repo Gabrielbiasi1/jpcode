@@ -37,6 +37,7 @@
 }
 
 
+
 .navbar{
     font-size:1.1em;
     border-bottom: 2px solid black;
@@ -107,6 +108,16 @@
   display: inline-block;
 }
 
+
+.extra-ficha {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.extra-ficha-active {
+  display: inline-block;
+}
 
 @keyframes animate {
   from {

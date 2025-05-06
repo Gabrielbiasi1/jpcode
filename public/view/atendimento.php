@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     hóspedes*</label>
                             </div>
                             <div class="col-lg-3"><input type="number" class="form-control" min=1 max=9 default=1
-                                    id="qntInput" onchange="changeQnt()" oninput="cloneFicha(this.value)"></div>
+                                    id="qntInput" onchange="changeQnt()"></div>
                         </div>
                         <br>
                         <div class="mb-3">
@@ -97,11 +97,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
     </form>
 
+
     <!-- Fichas extras, esse código é péssimo por enquanto, é até triste de olhar, mas clonar o HTML é horrível -->
-    <div id="fichasExtras" style="display: inline-block">
-    <span class="material-symbols-outlined">arrow_back_ios</span>
+
+    <div id="fichasExtras">
+    <button type="button" class="btn btn-secondary btn-prev-ficha" id="btnPrevFicha"><span class="material-symbols-outlined">arrow_back_ios</span></button>
         <!-- Ficha 2 -->
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 2</h5>
                 <div class="mb-3">
@@ -129,8 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <!--
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 3</h5>
                 <div class="mb-3">
@@ -158,7 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 4</h5>
                 <div class="mb-3">
@@ -186,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 5</h5>
                 <div class="mb-3">
@@ -214,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 6</h5>
                 <div class="mb-3">
@@ -242,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 7</h5>
                 <div class="mb-3">
@@ -270,7 +272,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 8</h5>
                 <div class="mb-3">
@@ -298,7 +300,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <div class="card" style="width: 25rem; margin: 20px; display: inline-block;">
+        <div class="card extra-ficha" style="width: 25rem; margin: 20px;">
             <div class="card-body" style="width: 25rem">
                 <h5 class="card-title">Ficha do hóspede 9</h5>
                 <div class="mb-3">
@@ -324,9 +326,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <textarea class="form-control" id="obs9Input" rows="3"></textarea>
                 </div>
             </div>
-        </div> -->
-        <span class="material-symbols-outlined">arrow_forward_ios</span>
-    </div>
+        </div>
+        <button type="button" class="btn btn-secondary btn-next-ficha" id="btnNextFicha"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+        </div>
     </div>
 
 

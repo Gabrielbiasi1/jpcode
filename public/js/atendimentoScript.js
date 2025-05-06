@@ -3,16 +3,57 @@ const nextBtns = document.querySelectorAll(".btn-next");
 const progress = document.getElementById("progress");
 const formSteps = document.querySelectorAll(".form-step");
 const progressSteps = document.querySelectorAll(".progress-step");
+const prevFicha = document.querySelectorAll(".btn-prev-ficha");
+const btnPrevFicha = document.getElementById("btnPrevFicha");
+const btnNextFicha = document.getElementById("btnNextFicha");
+const nextFicha = document.querySelectorAll(".btn-next-ficha");
+const extraFichas = document.querySelectorAll(".extra-ficha");
+const qnt = document.getElementById("qntInput");
 
 let formStepsNum = 0;
+let fichaNum = 0;
+
+nextFicha.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      fichaNum++;
+      validateFicha();
+      updateFicha();
+    });
+  });
+  
+prevFicha.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      fichaNum--;
+      validateFicha();
+      updateFicha();
+    });
+  });
+
+
+function updateFicha(){
+    extraFichas.forEach((extraFicha) => {
+        extraFicha.classList.contains("extra-ficha-active") &&
+        extraFicha.classList.remove("extra-ficha-active");
+      });
+      extraFichas[fichaNum].classList.add("extra-ficha-active");
+
+}
+
+function validateFicha(){
+    if(fichaNum<(qnt.value-2))
+        fichaNum=(qnt.value-2);
+    else if(fichaNum>(qnt.value-2))
+        fichaNum=(qnt.value-2);
+}
 
 // Quantidade de hóspedes
 function changeQnt(){
-    qnt = document.getElementById("qntInput");
     if(qnt.value>9)
         qnt.value=9;
     else if(qnt.value<1)
         qnt.value=1;
+    validateFicha();
+    updateFicha();
 }
 
 // Número do documento
