@@ -129,9 +129,6 @@
         <button type="submit" class="btn btn-light" id="btnConfirmar">Confirmar</button>
     </div>
 
-
-
-
 <!-- Página 2 -->
 
     <form>
